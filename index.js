@@ -32,10 +32,10 @@ function showModalHandler() {
   const modalActionYes = document.createElement("button");
   const modalActionCancel = document.createElement("button");
   const modalClose = document.createElement("button");
+  const closeIcon = document.createElement("div");
 
   modalActionYes.textContent = "Okay";
   modalActionCancel.textContent = "Cancel";
-  modalClose.textContent = "Close";
 
   modalActionYes.addEventListener("click", modalCloseHandler);
   modalActionCancel.addEventListener("click", modalCloseHandler);
@@ -44,7 +44,9 @@ function showModalHandler() {
   modalActionYes.className = "button button-okay";
   modalActionCancel.className = "button button-cancel";
   modalClose.className = "button-close";
+  closeIcon.className = "close-icon";
 
+  modalClose.append(closeIcon);
   modalHeader.append(modalTitle);
   modalHeader.append(modalClose);
   modalBody.append(modalContent);

@@ -6,6 +6,7 @@
   --button-cancel-hover: #eafcff;
   --white: #ffffff;
   --black: #000000;
+  --gray: #b4b4b4;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--gray);
 }
 
 .modal-title {
@@ -39,6 +40,36 @@ body {
 }
 
 .button-close {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.close-icon {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  opacity: 1;
+}
+
+.close-icon:before,
+.close-icon:after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 3px;
+  background-color: var(--black);
+  top: 13px;
+}
+
+.close-icon:before {
+  transform: rotate(45deg);
+}
+
+.close-icon::after {
+  transform: rotate(-45deg);
 }
 
 .modal-body {
@@ -48,7 +79,7 @@ body {
 .modal-footer {
   display: flex;
   justify-content: flex-end;
-  border-top: 1px solid var(--black);
+  border-top: 1px solid var(--gray);
   padding: 0.7rem 1.5rem;
 }
 
