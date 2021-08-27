@@ -1,4 +1,4 @@
-const button = document.getElementsByClassName("button");
+const button = document.querySelector("button");
 
 button.addEventListener("click", showModalHandler);
 
@@ -18,7 +18,7 @@ function showModalHandler() {
   const modalClose = document.createElement("button");
 
   modalClose.textContent = "Close";
-  modalClose.className = "btn btn--alt";
+  modalClose.className = "button button--alt";
 
   modalClose.addEventListener("click", modalCloseHandler);
 
