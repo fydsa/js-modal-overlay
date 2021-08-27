@@ -1,8 +1,9 @@
 :root {
   --click-button: rgb(41, 160, 140);
   --hover-click-button: rgb(17, 151, 129);
-  --button-alt: #218199;
-  --button-alt-hover: #10657a;
+  --button-okay: #218199;
+  --button-okay-hover: #10657a;
+  --button-cancel-hover: #eafcff;
   --white: #ffffff;
   --black: #000000;
 }
@@ -16,7 +17,7 @@ body {
   margin: 5rem;
 }
 
-.card {
+.box {
   background-color: var(--white);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -24,39 +25,78 @@ body {
   width: 26rem;
 }
 
+.modal-header {
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--black);
+}
+
+.modal-title {
+  font: inherit;
+  font-size: 1.2rem;
+}
+
+.button-close {
+}
+
+.modal-body {
+  padding: 0.7rem 1.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--black);
+  padding: 0.7rem 1.5rem;
+}
+
 .button {
   font: inherit;
   padding: 0.6rem 1.2rem;
   border-radius: 5px;
-  background-color: var(--click-button);
-  color: var(--white);
-  border: 1px solid var(--click-button);
-  margin: 1rem 1rem 0 0;
   cursor: pointer;
   font-weight: bold;
 }
 
-.button:hover {
+.show-modal-button {
+  background-color: var(--click-button);
+  border: 1px solid var(--click-button);
+  color: var(--white);
+  margin: 1rem 1rem 0 0;
+}
+
+.show-modal-button:hover {
   background-color: var(--hover-click-button);
   border-color: var(--hover-click-button);
 }
 
-.button--alt {
-  background-color: var(--button-alt);
+.button-okay {
+  background-color: var(--button-okay);
   color: var(--white);
 }
 
-.button--alt:hover {
-  background-color: var(--button-alt-hover);
+.button-okay:hover {
+  background-color: var(--button-okay-hover);
+}
+
+.button-cancel {
+  color: var(--button-okay);
+  background-color: transparent;
+  border: 1px solid var(--button-okay);
+  margin-right: 0.6rem;
+}
+
+.button-cancel:hover {
+  background-color: var(--button-cancel-hover);
 }
 
 .modal {
   position: fixed;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: var(--white);
-  padding: 1rem;
-  text-align: center;
   width: 30rem;
   z-index: 10;
   top: 30vh;
